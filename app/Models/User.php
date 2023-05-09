@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function booted()
+    {
+        static::creating(function ($model) {
+            $model->password = \Illuminate\Support\Facades\Hash::make('password');
+        });
+    }
 }
