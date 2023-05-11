@@ -21,7 +21,7 @@ class ClientsFormRequest extends FormRequest
     {
         return [
             'name' => 'string|min:6',
-            'email' => 'unique:users,email',
+            'email' => 'unique:users,email|email',
         ];
     }
 }
