@@ -17,7 +17,6 @@ class UserShowResource extends JsonResource
         return [
             'name' => $this->name,
             'email' => $this->email,
-            'cosas' => $this->somethingNew()
         ];
     }
 }

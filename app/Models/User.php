@@ -54,9 +54,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class);
     }
-
-    public function somethingNew(): string
-    {
-        return 'New string :D';
-    }
 }
