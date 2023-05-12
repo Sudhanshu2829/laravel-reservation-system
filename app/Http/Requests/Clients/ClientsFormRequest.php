@@ -20,8 +20,8 @@ class ClientsFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|min:6',
-            'email' => 'unique:users,email|email',
+            'name' => 'string|min:6|present|bail',
+            'email' => 'unique:users,email|email|present|bail',
         ];
     }
 }

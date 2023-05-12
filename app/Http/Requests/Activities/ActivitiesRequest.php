@@ -22,10 +22,10 @@ class ActivitiesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|min:10',
-            'slug' => 'string',
-            'description' => 'string',
-            'price' => 'integer|numeric'
+            'name' => 'string|min:10|present|bail',
+            'slug' => 'string|present|bail',
+            'description' => 'string|present|bail',
+            'price' => 'integer|numeric|present|bail'
         ];
     }
 }
