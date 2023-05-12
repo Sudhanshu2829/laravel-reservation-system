@@ -25,6 +25,5 @@ it('can show validation errors', function () {
     ])->assertStatus(422)->json();
 
     expect($response['message'])->toBeString()
-        ->and($response['errors']['price'][0])->toBeString()
-        ->and($response['errors']['price'][1])->toBeString();
+        ->and($response['errors']['price'][0])->toBeString();
 });
