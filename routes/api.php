@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\Clients\RegisterClientController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Clients\RegisterClientController;
+use App\Http\Controllers\Api\Activities\RegisterActivitiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::post('/create-clients', RegisterClientController::class);
+Route::post('/create-activities', RegisterActivitiesController::class);
