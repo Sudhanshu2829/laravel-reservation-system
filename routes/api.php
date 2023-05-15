@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Activities\ListActivitiesController;
 use App\Http\Controllers\Api\Activities\RegisterActivitiesController;
 use App\Http\Controllers\Api\Clients\RegisterClientController;
 use Illuminate\Http\Request;
@@ -22,3 +23,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::post('/create-clients', RegisterClientController::class);
 Route::post('/create-activities', RegisterActivitiesController::class);
+
+Route::get('/packages-activities', [ListActivitiesController::class, 'index']);
+Route::get('/packages-activities/{activity:slug}', [ListActivitiesController::class, 'show'])->name('show.activity');
+

@@ -5,7 +5,7 @@ namespace App\Http\Resources\Activity;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ShowActivityResource extends JsonResource
+class ActivityResource extends ShowActivityResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,8 @@ class ShowActivityResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
-            'name' => $this->name,
-            'slug'=> route('show.activity', $this->slug),
-            'description'=> $this->description,
-            'price'=> $this->price,
-        ];
+        return array_merge(parent::toArray($request), [
+            'new' => 'array'
+        ]);
     }
 }
