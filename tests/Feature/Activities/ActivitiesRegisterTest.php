@@ -3,6 +3,7 @@
 use App\Models\Activity;
 
 it('can register new activities', function () {
+
     $response = $this->postJson('/api/create-activities', [
         'name' => 'Paquete turistico uno',
         'slug' => 'paquete-turistico-uno',
@@ -31,6 +32,7 @@ it('can show validation errors', function () {
 });
 
 it('can show a specific activity', function () {
+
     $activity = Activity::factory()->create();
 
     $url = "/api/packages-activities/{$activity->slug}";
