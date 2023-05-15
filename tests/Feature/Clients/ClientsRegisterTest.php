@@ -10,8 +10,7 @@ it('can register new clients', function () {
 
     expect($response['data'])->toBeArray()
         ->and($response['data']['name'])->toBeString()
-        ->and($response['data']['email'])->toBeString()
-    ;
+        ->and($response['data']['email'])->toBeString();
 });
 
 it('can show validation errors', function () {

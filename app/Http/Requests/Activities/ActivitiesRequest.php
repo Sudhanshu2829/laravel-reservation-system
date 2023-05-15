@@ -2,13 +2,12 @@
 
 namespace App\Http\Requests\Activities;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ActivitiesRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
+    /** Determine if the user is authorized to make this request. */
     public function authorize(): bool
     {
         return true;
@@ -17,15 +16,15 @@ class ActivitiesRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => 'string|min:10|required|bail',
-            'slug' => 'string|required|bail',
-            'description' => 'string|required|bail',
-            'price' => 'integer|numeric|required|bail'
+            'name' => 'string|min:10|required',
+            'slug' => 'string|required',
+            'description' => 'string|required',
+            'price' => 'integer|numeric|required',
         ];
     }
 }

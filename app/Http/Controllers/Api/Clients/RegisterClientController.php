@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class RegisterClientController extends Controller
 {
     /** Handle the incoming request. */
-    public function __invoke(ClientsFormRequest $request)
+    public function __invoke(ClientsFormRequest $request): UserShowResource
     {
         $client = User::create($request->only([
             'name',

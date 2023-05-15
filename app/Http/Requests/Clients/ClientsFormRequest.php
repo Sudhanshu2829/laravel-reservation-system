@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Clients;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ClientsFormRequest extends FormRequest
@@ -15,13 +16,13 @@ class ClientsFormRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => 'string|min:6|required|bail',
-            'email' => 'unique:users,email|email|required|bail',
+            'name' => 'string|min:6|required',
+            'email' => 'unique:users,email|email|required',
         ];
     }
 }

@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers\Api\Activities;
 
-use App\Models\Activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Activities\ActivitiesRequest;
-use App\Http\Resources\Activities\ActivitiesShowResorce;
+use App\Models\Activity;
+use Illuminate\Http\JsonResponse;
 
 class RegisterActivitiesController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(ActivitiesRequest $request)
+    /** Handle the incoming request. */
+    public function __invoke(ActivitiesRequest $request): JsonResponse
     {
         $activity = Activity::create($request->only([
             'name',
@@ -21,6 +19,6 @@ class RegisterActivitiesController extends Controller
             'price',
         ]));
 
-        return new ActivitiesShowResorce($activity);
+        return response()->json('ok');
     }
 }

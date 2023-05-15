@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\Activities\RegisterActivitiesController;
+use App\Http\Controllers\Api\Clients\RegisterClientController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\Clients\RegisterClientController;
-use App\Http\Controllers\Api\Activities\RegisterActivitiesController;
 
 /*
 |--------------------------------------------------------------------------
