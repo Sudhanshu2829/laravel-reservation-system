@@ -26,4 +26,3 @@ Route::post('/create-activities', RegisterActivitiesController::class);
 
 Route::get('/packages-activities', [ListActivitiesController::class, 'index']);
 Route::get('/packages-activities/{activity:slug}', [ListActivitiesController::class, 'show'])->name('show.activity');
-

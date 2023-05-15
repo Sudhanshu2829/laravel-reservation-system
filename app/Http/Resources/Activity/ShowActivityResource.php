@@ -16,9 +16,9 @@ class ShowActivityResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'slug'=> route('show.activity', $this->slug),
-            'description'=> $this->description,
-            'price'=> $this->price,
+            'slug' => route('show.activity', $this->slug),
+            'description' => $this->description,
+            'price' => $this->price,
         ];
     }
 }

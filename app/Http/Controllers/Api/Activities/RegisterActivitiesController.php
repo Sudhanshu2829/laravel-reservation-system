@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Activities\ActivitiesRequest;
 use App\Http\Resources\Activity\ShowActivityResource;
 use App\Models\Activity;
-use Illuminate\Http\JsonResponse;
 
 class RegisterActivitiesController extends Controller
 {

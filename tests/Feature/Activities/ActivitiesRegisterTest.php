@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Activity;
+
 it('can register new activities', function () {
     $response = $this->postJson('/api/create-activities', [
         'name' => 'Paquete turistico uno',
@@ -26,4 +28,20 @@ it('can show validation errors', function () {
 
     expect($response['message'])->toBeString()
         ->and($response['errors']['price'][0])->toBeString();
+});
+
+it('can show a specific activity', function () {
+    $activity = Activity::factory()->create();
+
+    $url = "/api/packages-activities/{$activity->slug}";
+
+    $response = $this->getJson($url)
+        ->assertStatus(200)
+        ->json();
+
+    expect($response['data'])->toBeArray()
+        ->and($response['data']['name'])->toBeString()
+        ->and($response['data']['slug'])->toBeString()
+        ->and($response['data']['description'])->toBeString()
+        ->and($response['data']['price'])->toBeInt();
 });

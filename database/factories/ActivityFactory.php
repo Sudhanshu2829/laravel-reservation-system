@@ -18,7 +18,7 @@ class ActivityFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'slug' => fake()->url(),
+            'slug' => fake()->slug(),
             'description' => fake()->text(),
             'price' => 30,
         ];
